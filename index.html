@@ -6,235 +6,251 @@
     <title>Sultan Comfort Solutions | HVAC Excellence in Haymarket, VA</title>
 
     <meta name="google-site-verification" content="bq190dYbwzF8_61q4ES0dBGudFA7xZlfkArWCLfwMCI" />
-
     <meta name="description" content="Professional HVAC and Electrical services in Haymarket, VA. Fast, honest, and high-quality climate solutions for your home.">
     <meta name="keywords" content="HVAC Haymarket VA, Air Conditioning Repair, Heating Service, Sultan Comfort Solutions">
 
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-</head>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&family=Outfit:wght@800&display=swap" rel="stylesheet">
     
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Open Sans', sans-serif; overflow-x: hidden; }
+        :root {
+            --navy: #0a192f;
+            --blue: #004a99;
+            --orange: #ff6b35;
+            --max-width: 1000px; /* Windows Friendly Compact Width */
+        }
 
-        /* HEADER STYLES */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body { 
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; 
+            overflow-x: hidden; 
+            line-height: 1.5;
+            background: #fff;
+        }
+
+        /* --- COMPACT HEADER --- */
         header {
-            position: absolute;
-            top: 0;
-            left: 0;
+            position: fixed;
+            top: 0; left: 0; width: 100%;
+            padding: 12px 0;
+            display: flex;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .header-container {
+            max-width: var(--max-width);
+            margin: 0 auto;
             width: 100%;
-            padding: 25px 5%;
+            padding: 0 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            z-index: 100;
         }
 
-        .logo img {
-            height: 60px;
-            width: auto;
-        }
+        .logo img { height: 45px; width: auto; }
 
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 40px;
-        }
-
+        nav ul { display: flex; list-style: none; gap: 25px; }
         nav ul li a {
             text-decoration: none;
-            /* Header links made WHITE to be visible against the Navy Slide */
-            color: #ffffff; 
+            color: var(--navy); 
             font-weight: 700;
-            font-size: 1rem;
+            font-size: 0.8rem;
             transition: 0.3s;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
+        nav ul li a:hover { color: var(--orange); }
 
-        nav ul li a:hover { color: #ff6b35; }
-
-        /* HERO SECTION */
+        /* --- HERO SECTION (Compact Layout) --- */
         .hero {
             position: relative;
             height: 100vh;
+            min-height: 650px;
             width: 100%;
             display: flex;
             align-items: center;
-            background: #ffffff; /* Main background remains White */
+            background: #ffffff;
+            padding-top: 60px;
         }
 
-        /* UPDATED: Navy Blue Diagonal Slide */
+        /* Diagonal Navy Slice (Adjusted for 1000px) */
         .hero::before {
             content: '';
             position: absolute;
-            top: 0;
-            right: 0;
-            width: 48%;
+            top: 0; right: 0;
+            width: 45%;
             height: 100%;
-            background: #0a192f; /* Dark Navy Blue Slide */
-            clip-path: polygon(18% 0, 100% 0, 100% 100%, 0% 100%);
+            background: var(--navy);
+            clip-path: polygon(25% 0, 100% 0, 100% 100%, 0% 100%);
             z-index: 1;
         }
 
-        .container {
-            width: 100%;
-            max-width: 1500px;
+        .hero-wrapper {
+            max-width: var(--max-width);
             margin: 0 auto;
-            padding: 0 5%;
+            width: 100%;
+            padding: 0 20px;
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1.1fr 0.9fr;
             align-items: center;
             position: relative;
             z-index: 10;
         }
 
         /* Content Side */
-        .hero-text { padding-right: 60px; }
+        .hero-text { padding-right: 40px; }
         
         .tagline { 
-            color: #004a99; 
+            color: var(--blue); 
             font-weight: 800; 
-            font-size: 1rem; 
-            letter-spacing: 3px; 
+            font-size: 0.75rem; 
+            letter-spacing: 2px; 
             text-transform: uppercase; 
-            margin-bottom: 20px; 
+            margin-bottom: 15px; 
             display: block; 
         }
 
         .hero-text h1 { 
-            font-family: 'Montserrat', sans-serif; 
-            font-size: 5rem;
-            font-weight: 900; 
-            color: #0a192f; 
-            line-height: 1.05; 
-            margin-bottom: 30px; 
+            font-family: 'Outfit', sans-serif; 
+            font-size: clamp(2.2rem, 5vw, 3.8rem);
+            font-weight: 800; 
+            color: var(--navy); 
+            line-height: 1.1; 
+            margin-bottom: 20px; 
         }
 
-        .hero-text h1 span { color: #004a99; }
+        .hero-text h1 span { color: var(--blue); }
 
         .hero-text p { 
-            font-size: 1.2rem; 
-            color: #444; 
-            margin-bottom: 45px; 
-            max-width: 550px; 
-            line-height: 1.8;
+            font-size: 1rem; 
+            color: #555; 
+            margin-bottom: 30px; 
+            max-width: 480px; 
         }
 
-        /* Contact Info Cards */
+        /* Compact Info Cards */
         .info-grid { 
             display: flex; 
-            gap: 25px; 
-            margin-bottom: 50px; 
+            gap: 15px; 
+            margin-bottom: 35px; 
         }
 
         .info-card { 
             background: #fff; 
-            padding: 20px 30px; 
-            border-radius: 15px; 
-            box-shadow: 0 15px 40px rgba(0,0,0,0.06); 
-            border-bottom: 4px solid #ff6b35;
+            padding: 15px 20px; 
+            border-radius: 12px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05); 
+            border-bottom: 3px solid var(--orange);
             flex: 1;
         }
 
         .info-card small { 
             display: block; 
-            color: #999; 
+            color: #aaa; 
             font-weight: 800; 
-            font-size: 0.75rem; 
-            margin-bottom: 8px; 
+            font-size: 0.65rem; 
+            margin-bottom: 5px; 
             letter-spacing: 1px;
         }
 
         .info-card p { 
-            font-size: 1rem; 
+            font-size: 0.85rem; 
             font-weight: 700; 
-            color: #0a192f; 
+            color: var(--navy); 
             margin: 0; 
         }
 
         /* Action Buttons */
-        .btn-container { display: flex; gap: 20px; }
+        .btn-container { display: flex; gap: 15px; }
 
         .btn-primary { 
-            background: #ff6b35; 
+            background: var(--orange); 
             color: #fff; 
-            padding: 22px 45px; 
-            border-radius: 10px; 
+            padding: 16px 30px; 
+            border-radius: 8px; 
             text-decoration: none; 
             font-weight: 800; 
-            font-size: 1.1rem;
+            font-size: 0.9rem;
             transition: 0.3s; 
-            box-shadow: 0 12px 25px rgba(255,107,53,0.3); 
+            box-shadow: 0 8px 20px rgba(255,107,53,0.25); 
         }
 
         .btn-outline { 
-            background: #0a192f; 
+            background: var(--navy); 
             color: #fff; 
-            padding: 22px 45px; 
-            border-radius: 10px; 
+            padding: 16px 30px; 
+            border-radius: 8px; 
             text-decoration: none; 
             font-weight: 800; 
-            font-size: 1.1rem;
+            font-size: 0.9rem;
             transition: 0.3s; 
         }
 
-        .btn-primary:hover { transform: translateY(-5px); background: #e85a24; }
+        .btn-primary:hover { transform: translateY(-3px); background: #e85a24; }
+        .btn-outline:hover { transform: translateY(-3px); background: var(--blue); }
 
         /* Image Side */
         .hero-visual { display: flex; justify-content: flex-end; }
 
         .main-img {
             width: 100%;
-            max-width: 650px;
-            height: 700px;
+            max-width: 420px;
+            height: 520px;
             background: url('https://cdn.sanity.io/images/foill0ir/production/762af0b69343863b135c6d2451bef4d69037383c-5746x3831.jpg') center/cover;
-            border-radius: 40px;
-            box-shadow: 0 50px 100px rgba(0,0,0,0.3);
-            border: 15px solid rgba(255,255,255,0.1);
+            border-radius: 30px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.2);
+            border: 10px solid rgba(255,255,255,0.1);
         }
 
         /* Responsive Mobile */
-        @media (max-width: 1100px) {
+        @media (max-width: 900px) {
             .hero::before { display: none; }
-            .hero { height: auto; padding: 150px 0 80px; }
-            .container { grid-template-columns: 1fr; text-align: center; }
-            .hero-text { padding-right: 0; margin-bottom: 60px; }
-            .hero-text h1 { font-size: 3.5rem; }
-            .info-grid { flex-direction: column; }
-            .btn-container { justify-content: center; flex-direction: column; }
+            .hero { height: auto; padding: 120px 0 60px; }
+            .hero-wrapper { grid-template-columns: 1fr; text-align: center; }
+            .hero-text { padding-right: 0; margin-bottom: 50px; }
+            .hero-text h1 { font-size: 2.8rem; }
+            .hero-text p { margin: 0 auto 30px; }
+            .info-grid { flex-direction: column; align-items: center; }
+            .info-card { width: 100%; max-width: 300px; }
+            .btn-container { justify-content: center; flex-direction: column; align-items: center; }
+            .btn-primary, .btn-outline { width: 100%; max-width: 300px; }
             .hero-visual { justify-content: center; }
-            nav ul li a { color: #0a192f; } /* Dark text for mobile where slide is hidden */
+            .main-img { height: 400px; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <a href="#" class="logo">
-            <img src="https://sultancomfortsolutions.com/wp-content/uploads/2025/10/sultan-logo.webp" alt="Sultan Comfort Solutions Logo">
-        </a>
-        <nav>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#reviews">Reviews</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+        <div class="header-container">
+            <a href="#" class="logo">
+                <img src="https://sultancomfortsolutions.com/wp-content/uploads/2025/10/sultan-logo.webp" alt="Sultan Comfort Solutions Logo">
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#reviews">Reviews</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <section class="hero">
-        <div class="container">
+        <div class="hero-wrapper">
             <div class="hero-text">
                 <span class="tagline">Expert HVAC Specialists</span>
                 <h1>Reliable <span>Comfort</span> For Your Family.</h1>
-                <p>Top-rated heating and cooling services in Haymarket, VA. Experience fast, professional, and honest climate solutions.</p>
+                <p>Top-rated heating and cooling services in Haymarket, VA. Fast, professional, and honest climate solutions.</p>
                 
                 <div class="info-grid">
                     <div class="info-card">
                         <small>📍 OUR LOCATION</small>
-                        <p>Pinchot Lane, Haymarket, VA</p>
+                        <p>Haymarket, VA</p>
                     </div>
                     <div class="info-card">
                         <small>📞 CALL US</small>
